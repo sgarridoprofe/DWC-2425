@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+
+<body>
+
+    <input type="button" value="Crear Ventana" onclick="CrearVentana();" />
+    <input type="button" value="Cerrar Ventana" onclick="CerrarVentana();" />
+
+    <script>
+
+        window.document.write("</BR> Creando ventanas </BR>")
+        document.write("Todos los métodos y propiedades del objeto window son globales en JS </BR>")
+
+        let anchura = window.innerWidth;
+        let altura = window.innerHeight;
+        document.write(`</BR>Tamaño de la ventana... ${anchura} x ${altura} `)
+
+        document.write(`</BR> Propiedades de la pantalla
+                        
+                screen.width : ${screen.width} </BR>
+                screen.height : ${screen.height} </BR>
+                screen.availWidth : ${screen.availWidth} </BR>
+                screen.availHeight : ${screen.availHeight} </BR>
+                screen.colorDepth : ${screen.colorDepth} </BR>
+                screen.pixelDepth : ${screen.pixelDepth} </BR>
+
+                        `)
+
+        document.write(`</BR> Window Location
+                        
+                        window.location.href: ${window.location.href} </BR>
+                        window.location.hostname : ${window.location.hostname} </BR>
+                        window.location.pathname : ${window.location.pathname} </BR>
+                        window.location.protocol : ${window.location.protocol} </BR>
+                        
+        
+                                `)
+
+
+        document.write(`</BR> Window Location
+                        
+                Cookie: ${navigator.cookieEnabled} </BR>
+                Navegador : ${navigator.appCodeName} </BR>
+                 
+                               
+        `)
+
+
+        function CrearVentana() {
+
+            nventana = window.open("", "Nueva_Ventana", "height=500,width=400");
+            nventana.moveTo(screen.width/2, 0);
+
+            nventana.document.title = "Título ventana nueva";
+            nventana.document.write("Prueba de una ventana nueva");
+
+        }
+
+        function CerrarVentana() {
+            nventana.close();
+        }
+    </script>
+</body>
+
+</html>

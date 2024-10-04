@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var miCadena = "Jola, Mundo";
+    console.log(miCadena);
+
+    miCadena[0] = "H"; // Error porque las cadenas son inmutables.
+
+    miCadena = "Hola, Mundo"; // Se debe asignar una cadena nueva.
+    console.log(miCadena);
+
+
+
+
+    /*
+Código | Resultado
+------------------  
+\'      Comilla Simple
+\"      Comilla Doble
+\\      Barra invertida
+\n      Línea Nueva
+\r      Retorno de Carro
+\t      Tabulación
+\b      Retroceso
+\f      Salto de Página
+... 
+ */
+
+var miMeta;
+
+miMeta = "Aprender \'JavaScript\'";
+console.log(miMeta);
+
+miMeta = "Aprender \"JavaScript\"";
+console.log(miMeta);
+
+miMeta = "Aprender \\ JavaScript";
+console.log(miMeta);
+
+miMeta = "Aprender \n JavaScript";
+console.log(miMeta);
+    </script>
+</body>
+</html>

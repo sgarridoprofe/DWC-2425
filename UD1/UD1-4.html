@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo creación de Tabla</title>
+</head>
+
+<body>
+    <h3>Ejemplo de creación de tablas</h3>
+
+
+    <script>
+        document.write('<table border="1" cellspacing="2" bgcolor="black" width="200">')
+        document.write('    <tr bgcolor="white">')
+        for (i = 0; i < 5; i++) {
+            if (i%2==0){
+                document.write('<td width="50" bgcolor="black">a</td>')
+            }else{
+                document.write('<td width="50">a</td>')
+            }
+          
+        }
+        document.write('    </tr>')
+        document.write('</table>')
+        document.write('')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajando con el DOM. Creando subarboles</title>
+</head>
+
+<body>
+    <ul id="hobby-list">
+        <li class="hobby">Playing the banjo</li>
+        <li class="hobby">Paddleboarding</li>
+    </ul>
+    
+    <a href="www.google.com"></a>
+    <div>
+        <p>Contenido prueba</p>
+    </div>
+    <div>
+        Segundo div
+    </div>
+    <script>
+        (() => {
+
+            var hobbiesList = document.getElementById('hobby-list');
+
+            // By Tag Name
+            var hobbies = document.getElementsByTagName('li');
+            // hobbies.forEach(element => {
+            //     console.log(element)
+            // });
+            for(i=0;i<hobbies.length;i++){
+                console.log(hobbies[i].textContent)
+                console.log('clase...:'+hobbies[i].className)
+            }
+                // By Class Name
+            var alsoHobbies = document.getElementsByClassName('hobby');
+
+            // By CSS Query
+            var firstHobby = document.querySelector('ul li.hobby');
+            var againAlsoHobbies = document.querySelectorAll('ul li.hobby');
+
+            console.log(document.getElementsByTagName('a')[0].href)
+            console.log(document.getElementsByTagName('a')[0].getAttribute('href'))
+
+            let nododiv=document.getElementsByTagName('div')[0]
+            let nodoTexto=document.createTextNode('Nuevo texto')
+           
+            nododiv.appendChild(nodoTexto)           
+            
+            
+            let nodoP=document.createElement('p')
+            let nodoTex=document.createTextNode("Segundo parrafo")
+            nodoP.appendChild(nodoTex)
+            nododiv.appendChild(nodoP)
+
+            
+            
+            let nodoPaux=document.createElement('p')
+            let nodotextAux=document.createTextNode("contenido parrafo")
+            nodoPaux.appendChild(nodotextAux)
+
+            let nododiv2=document.getElementsByTagName('div')[1]
+            nododiv2.appendChild(nodoPaux)
+            //nododiv.appendChild(document.createElement('p'))
+
+
+            //recorro los div
+            let nodosDiv=document.getElementsByTagName('div')
+            for (nodo of nodosDiv){
+                console.log(nodo)
+            }
+
+        })();
+
+    </script>
+</body>
+
+</html>

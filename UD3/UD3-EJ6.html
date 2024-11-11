@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const alumno = {
+            nombre: 'Juan',
+            grupo: '1SMR',
+            notas: [4, 6],
+            showNotas: function () {
+                this.notas.forEach(element => {
+                    console.log(element)
+                });
+            },
+            addNota: function (nota) {
+                this.notas.push(nota)
+            },
+            addNotas: function (arrNotas) {
+                // this.notas=this.notas.concat(arrNotas)
+                this.notas = [...this.notas, ...arrNotas]
+            },
+            filtraNotas:function(filtro){
+                let arrSalida=[]
+                this.notas.forEach( (element) => {
+                    if (filtro(element))
+                        arrSalida.push(element)
+                }
+                
+                )
+                return arrSalida
+            }
+        }
+
+
+        alumno.addNota(8);
+        alumno.addNotas([17, 4, 6])
+        
+        console.error("Mostrado notas filtradas")
+        console.log(alumno.filtraNotas((valor) => valor>5))
+        // alumno.showNotas();
+
+        const arrClientes = ['pedro', 'antonio']
+
+        const fCompara = (n1, n2) => n1 - n2
+
+        console.log(fCompara(15, 4))
+        console.log(alumno.notas.sort((n1, n2) => n1 - n2))
+
+        const arrAlumnos = [{
+            nombre: 'Juan',
+            grupo: '1SMR',
+            edad:12,
+            notas: [4, 6]
+        }, {
+            nombre: 'Antonio',
+            grupo: '1SMR',
+            edad:15,
+            notas: [5, 8]
+        }]
+
+        // const fcompareAlumno=(alumno1, alumno2) => {
+        //     return alumno1.nombre.localeCompare(alumno2.nombre)
+        // }
+
+
+        console.log(arrAlumnos.sort((alumno1, alumno2) => 
+              alumno1.edad-alumno2.edad
+         ))
+
+        console.log(arrAlumnos.sort((alumno1, alumno2) => 
+        alumno1.nombre.localeCompare(alumno2.nombre)
+         ))
+
+
+       
+    </script>
+</body>
+
+</html>

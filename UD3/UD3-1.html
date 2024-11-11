@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3-1</title>
+</head>
+<body>
+    <script>
+        function saluda(){
+            alert("hola")
+        }
+
+        console.log(saluda)
+    
+        const incrementa=function (parametro){
+            return parametro+1
+        }
+
+
+        //omitimos palabra function y sustituimos por => des pues del parámetro
+        const incrementa2= (parametro) =>{
+            return parametro+1
+        }
+
+
+        //omitimos paréntesis en los parametrso (sólo si es un único parametro)
+        const incrementa3= parametro =>{
+            return parametro+1
+        }
+
+
+        //omitimos return y llaves, sólo si es una una expresión
+        const incrementa4= parametro => parametro+1
+
+        
+        console.log(incrementa4(3))
+    </script>
+</body>
+</html>

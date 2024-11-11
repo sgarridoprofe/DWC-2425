@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const Array1 = ['hola', 1, 5];
+
+        const alumno = {
+            nombre: 'juan',
+            grupo: 'A',
+            notas: [4, 7, 8],
+            muestraNotas: function () {
+                this.notas.forEach(nota => console.log(nota));
+            },
+            addNota: function (nota) {
+                this.notas.push(nota);
+            },
+            addNotas: function (notas) {
+                this.notas = this.notas.concat(notas);
+            },
+        };
+
+        alumno.addNota(2);
+        alumno.addNotas([4, 9]);
+        alumno.muestraNotas();
+    </script>
+</body>
+
+</html>

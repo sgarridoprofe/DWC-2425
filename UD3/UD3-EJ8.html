@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos funciones constructoras</title>
+</head>
+
+<body>
+
+    <script>
+        //funcion constructora
+        function Usuario(dni, nombre, edad) {
+            this.dni = dni
+            this.nombre = nombre
+            this.edad = edad
+            this.showMe = function () {
+                console.log(`Dni: ${this.dni} -- Nombre:${this.nombre}`)
+            }
+        }
+
+        let objuser1 = new Usuario('7554444X', 'Juan', 16);
+        console.log(objuser1)
+
+        console.log(objuser1.dni)
+        objuser1.showMe();
+
+        const arrUsuarios = [
+            new Usuario("222222X", "Pedro", 15),
+            new Usuario("333333X", "Lucas", 18)
+        ];
+
+        const arrUsuarios2 = []
+
+        arrUsuarios2.push(new Usuario("222222X", "Pedro", 15), new Usuario("333333X", "Lucas", 18))
+
+
+        console.table(arrUsuarios)
+        console.table(arrUsuarios2)
+
+
+        class Empleado{
+            constructor (codigo,nombre,telefono){
+                this.codigo=codigo
+                this.nombre=nombre
+                this.telefono=telefono
+            }
+            muestraEmpleado(){
+                console.log("Empleado:"+this.codigo+"-"+this.nombre)
+            }
+        }
+
+        let objEmp1=new Empleado(1,"María",6555556)
+        console.log(objEmp1)
+    </script>
+</body>
+
+</html>

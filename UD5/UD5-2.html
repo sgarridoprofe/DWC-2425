@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos en el DOM</title>
+</head>
+
+<body>
+
+    <img id="logo" src="https://1000marcas.net/wp-content/uploads/2020/01/logo-Real-Madrid-640x427.png" width="640"
+        height="350" />
+
+
+    <div id="main" style="background-color: lightblue;">Elemento con atributo</div>
+    
+    <button onclick="fmodifica()">modifica</button>
+    <div></div>
+    <p id="parrafoLorem" style="font-size: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quod consectetur saepe ea, voluptate molestiae est quidem libero molestias magnam exercitationem nisi minima deleniti! Nostrum recusandae architecto quod dolores iusto?</p>
+    
+    <button onclick="fincrementa()">Incrementa</button>
+
+    <script>
+
+        function fmodifica() {
+            const logo = document.getElementById('logo')
+
+            //obtenemos los atributos del nodo con getAttribute
+            console.log(logo.getAttribute("src"))
+            console.log(logo.src)
+
+            //modificamos los atributos con setAttribute
+            logo.setAttribute("src", "https://logos-world.net/wp-content/uploads/2020/06/atletico-madrid-Logo.png")
+
+            //estilos
+            const elemento = document.getElementById('main')
+            elemento.style.backgroundColor = 'red'
+            elemento.style.color='yellow'
+        }
+
+        function fincrementa(){
+            const parrafo=document.getElementById('parrafoLorem')
+            parrafo.style.color='yellow'
+            parrafo.style.fontSize='20px'
+            
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innerhtml VS textContent</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium quo asperiores libero officiis itaque, numquam tempora consequuntur sit. Dolorem numquam adipisci vitae in eum quibusdam reiciendis ut sunt, a et.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur mollitia quis eligendi quo ipsam deserunt perspiciatis praesentium velit aliquam! Cum, praesentium iure. Praesentium libero ipsum numquam iusto fugiat cum esse?</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti voluptatem ipsam cum nihil, odit nam distinctio consectetur unde voluptas, saepe, neque doloribus numquam perferendis id autem voluptate sint accusamus in?</p>
+
+    <script>
+        //node
+        console.log(document.body)
+        
+        //innerHTML todo el html con las etiquetas
+        console.error(document.body.innerHTML)
+
+        //sólo el texto, sin etiquetas 
+        console.log(document.body.textContent)
+
+        console.log(document.getElementsByTagName('p')[1].textContent)
+    </script>
+    
+</body>
+</html>

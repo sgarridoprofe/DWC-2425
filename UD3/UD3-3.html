@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring y objetos literales</title>
+</head>
+<body>
+
+    <script>
+        const elementos=[1,2,3,4,5]
+
+        //let primero=elementos[0]
+        //let segundo=elementos[1]
+
+       // let primero,segundo
+
+        let [primero,,tercero,...resto]=elementos
+
+        const articulo={codigo:5,nombre:'Teclado',precio:9.50}
+        //let codigo=articulo.codigo
+        //let pepe=articulo.nombre
+        const {codigo,precio}=articulo
+
+        function pvp(art){
+            return art.precio*1.21;
+        }
+
+        function pvp2({precio}){
+            return precio*1.21;
+        }
+
+        const pvp3= ({precio}) => precio*1.21
+
+        console.log(elementos)
+        console.log(primero)
+        console.log(tercero)
+        console.log(resto)
+
+        console.log(articulo)
+        console.log(codigo)
+        console.log(precio)
+        
+        console.log(articulo,pvp3(articulo))
+
+    </script>
+    </body>
+</html>

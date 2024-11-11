@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const doble=(arrValores) => {
+            const arrSalida=[]
+            arrValores.forEach(element => {
+                arrSalida.push(element*2)
+            });
+            return arrSalida;
+        }
+
+        const incrementa=(arrValores) => {
+            const arrSalida=[]
+            arrValores.forEach(element => {
+                arrSalida.push(element+1)
+            });
+            return arrSalida;
+        }
+
+        const modificaArray=(arrValores, fEjecuta) => {
+            const arrSalida=[]
+            arrValores.forEach(element => {
+                arrSalida.push(fEjecuta(element))
+            });
+            return arrSalida;
+        }
+
+        const filtraArray=(arrValores, fVerifica) => {
+            const arrSalida=[]
+            arrValores.forEach(element => {
+                if (fVerifica(element))
+                    arrSalida.push(element)
+            });
+            return arrSalida;
+        }
+
+
+        arrMod=modificaArray([3,4,6],valor=>valor-1)
+
+        arrFiltrado=filtraArray([2,3,7,4,8], valor=> valor>5)
+
+
+        function modifica(valor){
+            valor[0]=valor[0]+1;
+        }
+
+        arrDoble=doble([3,4])
+        arrIncre=incrementa([3,4])
+
+        // function fmodi(valor){
+        //     return valor-1
+        // }
+        // const fmodi=valor => valor-1
+
+              
+        let v=[5];
+        modifica(v);
+        console.log(v[0]);
+
+        // console.log(arrDoble)
+        // console.log(arrIncre)
+        // console.log(arrMod)
+        console.log(arrFiltrado)
+        console.log([{dni:"21345678Z",nombre:"pepe"},
+            {dni:"25673438Z",nombre:"juan"}
+            ].map(valor=>`<li> ${valor.nombre} </li>`).join("..."))
+    </script>
+</body>
+</html>

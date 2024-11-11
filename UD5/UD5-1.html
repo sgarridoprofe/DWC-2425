@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturando nodos del DOM</title>
+</head>
+<body>
+    <p id="main">Párrafo Principal</p>
+
+    <div class="detalle">Elemento 1</div>
+    <div class="detalle">Elemento 2</div>
+    <div class="detalle">Elemento 3</div>
+
+    <script>
+        
+        //formas de acceder al dom
+        console.log(document.body)
+        
+        // Por id, devuelve un node
+        console.log(document.getElementById('main'))
+        let main=document.getElementById('main')
+
+        //por Etiqueta, devuelve un htmlCollection
+        console.log(document.getElementsByTagName('div'))
+        let divs=document.getElementsByTagName('div')
+
+        //Por nombre de la clase, devuelve un htmlCollection
+        console.log(document.getElementsByClassName('detalle'))
+        let divs2=document.getElementsByClassName('detalle')
+
+        //por css, devuelve un node
+        console.log(document.querySelector('div'))
+        let nodediv=document.querySelector('div')
+
+        //por css, devuelve un nodelist
+        console.log(document.querySelectorAll('div'))
+        let divs3=document.querySelectorAll('div')
+   
+        //se recomienda usar solo: getElementById, querySelector, querySelectorAll
+
+        //htmlcollections no soporta foreach
+        for (nodo of divs2){
+            console.log(nodo)
+        }
+        console.log(divs2[0])
+        
+        //nodelist permite foreach
+        divs3.forEach( (nodo) =>{
+            console.log(nodo)
+        })
+        console.log(divs3[0])
+
+    </script>
+</body>
+</html>

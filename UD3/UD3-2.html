@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo uso funciones arrow</title>
+</head>
+<body>
+    
+
+    <script>
+        /*function suma(a,b) { return a+b }
+        function resta(a,b) { return a-b }
+
+        function operacion(a,b,op){
+            return op(a,b)
+        }
+*/
+
+        const operacion= (a,b,op) => op(a,b)
+        console.log(operacion(2,3, (a,b) => a+b ))
+    </script>
+</body>
+</html>

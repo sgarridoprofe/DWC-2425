@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubling en eventos</title>
+</head>
+<style>
+    body * {
+      margin: 10px;
+      border: 1px solid blue;
+    }
+  </style>
+<body>
+
+    <div onclick="alert('clickl...')">
+        <em>Si haces click en <code>EM</code>, se dispara el  evento del <code>DIV</code> </em>
+        Fuera del em
+    </div>
+
+    <!-- El evento se lanza primero en el elemento, 
+     posteriormente en el padre y ancestros hasta el raiz 
+     
+     event.target el elemento que inicialmente recibe el evento
+     -->
+    <form onclick="alert('form ' + ' event.target:'+ event.target.tagName)">FORM
+        <div onclick="alert('div' + ' event.target:'+ event.target.tagName)">DIV
+          <p onclick="alert('p' + ' event.target:'+ event.target.tagName)">P</p>
+        </div>
+    </form>
+
+
+</body>
+</html>

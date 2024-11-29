@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controles y DOM</title>
+</head>
+
+<body>
+    Nombre: <input type="text" id="entrada" name="nombre" value="Valor inicial" /> <br/>
+    Grupo: <input type="text" id="miInput" name="grupo" value="Valor inicial" /> <br/>
+
+    <button onclick="fLimpiaControles()">Reset</button> <br/>
+    <button onclick="fInicializa()">Inicializa</button> <br/>
+    <script>
+        //acedemos a los elementos sin formulario
+        function fLimpiaControles() {
+
+            //recuperando un  text con querySelector
+            const inputElement = document.querySelector('input[type="text"]')
+            inputElement.value = '.....'
+
+            //recuperando todos los text con querySelector 
+            const inputElements = document.querySelectorAll('input[type="text"]')
+            inputElements.forEach((input) => { input.value = '' })
+        }
+
+
+        function fInicializa(){
+            let inputElements = document.getElementsByName('nombre')
+            inputElements.forEach((input) => { input.value = 'Nombre...' })
+            
+            inputElements = document.getElementsByName('grupo')
+            inputElements.forEach((input) => { input.value = 'Grupo...' })
+        }
+
+        
+    </script>
+</body>
+
+</html>

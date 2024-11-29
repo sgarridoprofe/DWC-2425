@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="login" method="post" onsubmit="return false;">
+        
+        <button type="submit" onclick="fenviar(event)">Submit</button>
+    </form>
+    
+    <script type="module">
+        import { arrArticulos } from './modulos/articulos.mjs'
+
+        function fenviar(event) {
+            //event.preventDefault();
+            console.log('empleados...', arrArticulos)
+        }
+
+        window.fenviar=fenviar
+    </script>
+</body>
+
+</html>

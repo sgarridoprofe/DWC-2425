@@ -1,0 +1,63 @@
+<html>
+
+<head>Ejemplo llamada api</head>
+
+<body>
+
+    <script>
+        //https://rickandmortyapi.com/documentation/#get-a-single-character
+        
+
+        const muestraProductos=(arrProductos)=>{
+            arrProductos.forEach( (producto) =>{
+                console.log(producto)
+                document.getElementById("respuestaDelServidor").innerHTML+="<p>" + producto.title + "</p>"
+            })
+           
+        }
+
+        function RealizaSolicitud() {
+            var xhr = new XMLHttpRequest();
+            //xhr.open("GET", "https://reqres.in/api/products/3", true);
+            xhr.open("GET", "https://fakestoreapi.com/products", true);
+
+            xhr.onload = function () {
+               // console.log(xhr.responseText);
+                //let objResultado=JSON.parse(xhr.responseText);
+                //console.log(objResultado.page)
+                //document.getElementById("respuestaDelServidor").innerHTML = xhr.responseText;
+                //formateaJson(xhr.responseText);
+                muestraProductos(JSON.parse(xhr.responseText))
+            };
+            xhr.send();
+        }
+
+        function getFetch(){
+            fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>{
+                muestraProductos(json)
+                console.log(json)
+            })
+        }
+
+    </script>
+
+
+    <h1>HTML API REST</h1>
+    <h2>Prueba de Api rest</h2>
+
+    <p>Carga los datos de una api REST al pulsar</p>
+
+    <button onclick="RealizaSolicitud()">Realiza solicitud</button>
+
+    <p id="respuestaDelServidor"></p>
+
+    <p id="respuestaDelServidorFormateada"></p>
+
+
+    <div id="cajaResultados"></div>
+
+</body>
+
+</html>

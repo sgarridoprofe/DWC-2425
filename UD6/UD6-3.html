@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await Async</title>
+</head>
+
+<body>
+
+    <h1>HTML API REST</h1>
+    <h2>Prueba de Api rest. Promesas</h2>
+
+    <p>Carga los datos de una api REST al pulsar</p>
+
+    <button onclick="getFetch()">Realiza solicitud</button>
+
+    <div id="contenedor"></div>
+    <script>
+
+
+        const muestraProductos = (arrProductos) => {
+            arrProductos.forEach((producto) => {
+                // console.log(producto) 
+                document.getElementById("contenedor").innerHTML += "<p>" + producto.title + "</p>"
+            })
+
+        }
+
+
+        //sólo puedo usar await, dentro de una función async
+        async function getFetch() {
+
+            try {
+                //await espera la ejecución de una promesa
+                let respuesta = await fetch('https://fakestoreapi.com/products');
+
+                let datosJson = await respuesta.json();
+
+                muestraProductos(datosJson);
+
+            } catch (err) {
+                alert(err); //error 
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

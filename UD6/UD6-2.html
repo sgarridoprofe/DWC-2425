@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas</title>
+</head>
+
+<body>
+
+    <h1>HTML API REST</h1>
+    <h2>Prueba de Api rest. Promesas</h2>
+
+    <p>Carga los datos de una api REST al pulsar</p>
+
+    <button onclick="getFetch()">Realiza solicitud</button>
+
+    <div id="contenedor"></div>
+    <script>
+
+
+        const muestraProductos = (arrProductos) => {
+            arrProductos.forEach((producto) => {
+                console.log(producto)
+                document.getElementById("contenedor").innerHTML += "<p>" + producto.title + "</p>"
+            })
+
+        }
+
+        function ejemploPromesa() {
+            //obtenemos una promesa
+            const ejPromesa = fetch('https://fakestoreapi.com/products')
+            console.log(ejPromesa);
+
+            //le indicamos a la promesa la función a ejecutar al recibir el resultado
+            ejPromesa.then((response) => {
+                console.log(`Received response: ${response.status}`);
+                console.log('response:', response)
+               
+                
+                //ejecutamos el método json, para procesar la respuesta del servidor en JSON
+                // nos devuelve una segunda promesa
+                // Equivale a usar JSON.parse().
+                const promesaJSON = response.json()
+                console.log('Promesa JSON', promesaJSON)
+
+                promesaJSON.then(datosJson => { console.log('Promesa JSON.then', datosJson) })
+
+            });
+
+
+        }
+
+
+        function getFetch() {
+            fetch('https://fakestoreapi.com/products')
+                .then(res => res.json())
+                .then(json => {
+                    muestraProductos(json)
+                    console.log(json)
+                })
+                .catch( error => { console.log('Error...:',error)})
+        }
+
+
+
+    </script>
+</body>
+
+</html>

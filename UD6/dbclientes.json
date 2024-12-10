@@ -1,0 +1,28 @@
+{
+    "user": [
+      {
+        "id": "1",
+        "login": "a",
+        "pass": "a"
+      },
+      {
+        "id": "2",
+        "login": "b",
+        "pass": "b"
+      }
+    ],
+    "clientes": [
+      {
+        "id": "1",
+        "NIF": "F48454545",
+        "Nombre": "Limpiezas Gomez",
+        "Dirección": "C/ Martinez Lopez 24"
+      },
+      {
+        "id": "1",
+        "NIF": "F3333333",
+        "Nombre": "Comercial Martinez",
+        "Dirección": "C/ Ruben darío 10"
+      }
+    ]
+  }

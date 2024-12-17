@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento Local</title>
+</head>
+
+<body>
+
+    <p>Una cookie es un string (cadena de texto) que contiene parejas parametro=valor separadas por ; de la siguiente
+        forma: </p>
+    <p>nombre=valor; expires=fecha; max-age=segundos; path=ruta; domain=dominio; secure; httponly; </p>
+
+    <div id="Principal">
+
+    </div>
+
+    <script>
+        
+        document.getElementById("Principal").textContent = "Cookies permitidos: " + navigator.cookieEnabled
+
+        document.cookie = "nombre=sergio"
+
+        document.cookie = "dni=444554454; max-age=3600"
+
+        //modificamos la cookie
+        document.cookie = "nombre=juan"
+
+        //eliminar una cookie
+        //asignar una fecha de caducidad (expires) pasada o un max-age igual a cero.
+        document.cookie = "nombre=; max-age=0";
+    
+        document.cookie = "telefono=888888"
+        console.log(document.cookie)
+
+        //almacenamiento en local 
+        localStorage.setItem("Color", "Rojo")
+        sessionStorage.setItem("Color","Amarillo")
+
+       console.log(localStorage.getItem("Color"))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.productosGrid{
+
+    display: grid; /*el ul es un grid*/
+    grid-template-columns: auto auto auto; /*generamos columnas de ancho 230*/
+    gap: 40px; /*separación entre los elementos del grip*/
+    padding: 40px; /*separación del elemento*/
+    justify-content: center;
+    background-color: white;
+}
+
+/* aplicamos media query que permite aplicar estilos dependiendo del dispositivo 
+ de esta forma
+*/
+
+@media (max-width: 560px){ /* de 0 a 560 px sobreescribimos la clase*/
+    .moviesGrid{
+        grid-template-columns: 100%;  /*que ocupe la columna todo el dispositivo*/
+    }
+    
+}

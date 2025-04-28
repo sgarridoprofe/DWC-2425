@@ -1,0 +1,14 @@
+.img img{
+    width: 200px;
+    height: 250px;
+    text-align: center;
+}
+
+.carrusel {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}

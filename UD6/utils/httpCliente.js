@@ -4,14 +4,12 @@
  * @returns
  */
 
-
-
 export function getAPI(url) {
   return fetch(url).then((result) => result.json());
 }
 
 export function getAPICallback(url, callback, callbackError) {
-   fetch(url)
+  fetch(url)
     .then((result) => result.json())
     .then((datos) => callback(datos))
     .catch((error) => callbackError(error));

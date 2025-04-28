@@ -1,0 +1,18 @@
+.detalle {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.detalle div {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.detalle img {
+    width: 200px;
+    height: 250px;
+}

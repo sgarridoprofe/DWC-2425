@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays manejo básico</title>
+</head>
+
+<body>
+
+    <script>
+
+
+
+        // Declaración de un array
+        let arAlumnos = new Array();
+        let arNotas = [];
+
+        arAlumnos.push('Juan')
+        arAlumnos.push('Pedro')
+        arAlumnos.push('Lucas')
+
+
+        showValores(arAlumnos)
+        showValores2(arAlumnos)
+
+        function showValores(pvalores) {
+            document.write('Mostrando valores del array ..</br>')
+            for (i = 0; i < pvalores.length; i++)
+                document.write(`Posicion ${i} : Valor ${pvalores[i]} </br> `)
+        }
+
+
+
+        function showValores2(pvalores) {
+            document.write('Mostrando valores del array ..</br>')
+            pvalores.forEach((elemento, i) => {
+                document.write(`Valor del array ${i}: ${elemento} </br>`)
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>

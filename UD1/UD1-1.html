@@ -1,37 +1,105 @@
 <!DOCTYPE html>
 <html>
-   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title>Ubicaión de JS</title>  
-      <script>
-            // ubicar etiquetas script con src para módulos
-            document.write("hola...");
-            saluda();
-      </script>
-   </head>
-   <body>
-      <header>
-         <h1>Titular principal de la página</h1>
-      </header>
-      <main>
-         <h2>Primer Subtítulo de la página</h2>
-         <p>Primer párrafo</p>
-      </main>
-      <footer>
-      </footer>
 
-      
-        <script>
-            /* Por convención se recomienda ubicar la etiqueta script al final del body */
-        document.write("adios...");
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <title>Ubicaión de JS</title>
+   <script>
+      // ubicar etiquetas script con src para módulos
+      document.write("<p> hola...</p>");
+      saluda();
 
-         function saluda(){
-            document.write("saludo");
+   </script>
+</head>
+
+<body>
+   <header>
+      <h1>Titular principal de la página</h1>
+   </header>
+   <main>
+      <h2>Primer Subtítulo de la página</h2>
+      <p>Primer párrafo</p>
+
+
+
+   </main>
+   <footer>
+   </footer>
+   <script>
+      /* Por convención se recomienda ubicar la etiqueta script al final del body */
+      document.write(" <p>adios... </p>");
+
+      saluda();
+
+      let cadena = "23.5"
+      let numero = 56.25
+      let booleano = true
+      const pi = 3.14
+
+      document.writeln('<p> cadena * numero : </p>', cadena * numero)
+
+      document.writeln('<p> valor : </p>', pi)
+
+      function saluda() {
+         console.log('Funcion Saludo', 'saludo')
+         document.write(" <p> saludo </p>");
+      }
+
+      const fsaluda = saluda;
+      fsaluda();
+
+
+      const fAdios = function () {
+         console.log('Adios')
+      }
+
+      fAdios();
+      console.log('fAdios', fAdios)
+
+
+      function muestraHoras() {
+         let initialHours = 9;
+         let initialMinutes = 0;
+         let finalHour = 21;
+         let finalMinute = 30;
+
+         let isHalfHour = false;
+
+         //el bucle se repetira hasta que nos pasemos de la hora, como vamos de 30 en 30 no es necesario chequear los minutos
+         for (let i = initialHours; i <= finalHour;) {
+
+            salida = `${initialHours}:${initialMinutes}`;
+            document.write(salida + "<br>");
+
+            //cambiamos los minutos entre 30 y 0 cada iteracion y solo aumentamos las horas cuando ya fueron y media
+            if (!isHalfHour) {
+               initialMinutes = 30;
+            } else {
+               initialMinutes = 0;
+               i++
+            }
+
+            //invertimos el valor de si estamos a y media o no
+            isHalfHour = !isHalfHour;
+
          }
-         saluda();
-         prompt(,)
-         pa
-        </script>
+      }
 
-   </body>
+      //funcion que muestra la lista de horas justo debajo del boton
+      function formatHours(hours, minutes) {
+         let salida = `${hours}:${minutes}`;
+
+         document.write(salida + "<br>");
+      }
+
+      muestraHoras();
+
+      /* saluda();*/
+      /*
+            console.log('La operación 20==20 es ', 20 == 20)
+            document.writeln('La operación 20==20 es ', 20 == 20)*/
+   </script>
+
+</body>
+
 </html>

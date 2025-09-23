@@ -11,11 +11,11 @@
     var nombre = "Juan"
     let paisDeResidencia = "España";
 
-    
-      let pais="Italia"
-      console.log(pais);
-    
-    
+
+    let pais = "Italia"
+    console.log(pais);
+
+
     const edad = 30;
   </script>
 </head>
@@ -29,20 +29,24 @@
     <p>Primer párrafo</p>
 
     <script>
+      debugger
       // ubicar etiquetas script con src para módulos
+      console.log('nombre', nombre)
+      console.log('pais', pais)
       document.write("hola...");
-      
 
-      function miFuncion(){
+
+      function miFuncion() {
         console.log("esta es una funcion")
       }
 
-      let fMensaje=miFuncion;
+      miFuncion();
+      let fMensaje = miFuncion;
 
-      let mSalida="hola mundo";
-      mSalida=5 + "6";
-      mSalida=mSalida+4;
-      mSalida+=4;
+      let mSalida = "hola mundo";
+      mSalida = 5 + "6";
+      mSalida = mSalida + 4;
+      mSalida += 4;
       console.log(mSalida);
 
       <!-- hola.. -->

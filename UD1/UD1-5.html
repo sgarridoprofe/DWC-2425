@@ -1,53 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones</title>
 </head>
+
 <body>
+
     <script>
 
 
-        let s=suma(4,5)
+        let s = suma(4, 5)
 
-        debugger
+
+
         console.log("La suma es ..." + s)
-        function suma(a,b){
-            return a+b
+        function suma(a, b) {
+            return a + b
         }
 
         /*
             la variable inc tomará el valor por defecto de 1
         */
-        function incrementa(a,inc=1){
-           return a+inc;     
+        function incrementa(a, inc = 1) {
+            return a + inc;
         }
 
-       // let rResta=sResta(8,3)
+        // let rResta=sResta(8,3)
 
-        const sResta=function (a,b){
-            return (a-b)
+        const sResta = function (a, b) {
+            return (a - b)
         }
-       
-        let rResta=sResta(8,3)
+
+        let rResta = sResta(8, 3)
         console.log("La resta es ..." + rResta)
 
         /*
         Forma de tener un número de argumentos variables
         estamos capturando todos los argumentos y almacenándolos en un array
         */
-        function muestraParametros(...argumentos){
+        function muestraParametros(...argumentos) {
             document.write("Mostramos todos los argumentos recibidos: <br>")
-            for(i=0;i<argumentos.length;i++){
-                document.write("Argumento " + i + ':' + argumentos[i] +'<br>')
+            for (i = 0; i < argumentos.length; i++) {
+                document.write("Argumento " + i + ':' + argumentos[i] + '<br>')
             }
         }
-        
-        document.write(`Incementa incrementa(2,2): ${incrementa(2,2)} <br>` )
-        document.write(`Incementa incrementa(2): ${incrementa(2)} <br>` )
-        muestraParametros('juan',4,'hola',85)
-    
+
+        document.write(`Incementa incrementa(2,2): ${incrementa(2, 2)} <br>`)
+        document.write(`Incementa incrementa(2): ${incrementa(2)} <br>`)
+        muestraParametros('juan', 4, 'hola', 85)
+
     </script>
 </body>
+
 </html>

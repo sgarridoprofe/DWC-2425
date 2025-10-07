@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array programación Funcional</title>
+</head>
+
+<body>
+
+    <script>
+        let arNotas = [3, 4, 8, 9]
+
+        function aprobado(nota) {
+            return nota >= 5
+        }
+
+        let valor = arNotas.find(aprobado)
+        let index = arNotas.findIndex(aprobado)
+
+        document.write('<br> Mis notas son ', arNotas)
+        document.write('<br> La primera nota aprobada es ', valor)
+
+
+        document.write('<br> La primera nota aprobada esta en la posicion ', index)
+
+        let arAlumnos = [{ nombre: "Diana", nota: 8 },
+        { nombre: "Juan", nota: 4 },
+        { mombre: "Cristina", nota: 8 }]
+
+        let primerAprobado = arAlumnos.find(function (obAlumno) {
+            return obAlumno.nota >= 5
+        })
+        document.write('<br> Mi primer aprobado es ', primerAprobado.nombre)
+
+
+        let primerSuspenso = arAlumnos.find(function (obAlumno) {
+            return obAlumno.nota < 5
+        })
+        document.write('<br> Mi primer suspenso es ', primerSuspenso.nombre, primerSuspenso.nota)
+
+        let btodosaprobados = arAlumnos.every(function (obAlumno) {
+            return obAlumno.nota >= 5
+        })
+
+        document.write("<br> Estan todos los alumnos aprobados?", btodosaprobados)
+
+        let balgunArobados = arAlumnos.some(function (obAlumno) {
+            return obAlumno.nota >= 5
+        })
+
+        document.write("<br> Algún alumnos aprobados?", balgunArobados)
+
+
+        document.write("<br> Estas son mis notas,", arNotas)
+        arNotasElDoble = arNotas.map(function (valor) {
+            return valor * 2
+        })
+
+        document.write("<br> Y estas son el doble,", arNotasElDoble)
+
+        arParrafos = arNotas.map(function (valor) {
+            return "<p>" + valor + "</p>"
+        })
+
+        document.write("Y estos son los párrafos <br>,", arParrafos)
+
+
+        arAlumnosFormateado = arAlumnos.map(function (obAlumno) {
+            return "<p>" + obAlumno.nombre + "-" + obAlumno.nota + "</p>"
+        })
+        document.write("Y estos son los alumnos <br>,", arAlumnosFormateado)
+
+
+        arNotas.forEach(function (valor, index, arr) {
+            console.log(arr[index], arr[index + 1])
+            console.log("Nota pos:valor", index, "-", valor)
+        })
+
+        arNotas.forEach(valor => console.log("El valor es ", valor))
+
+    </script>
+</body>
+
+</html>

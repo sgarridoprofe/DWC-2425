@@ -1,36 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destructuring y objetos literales</title>
 </head>
+
 <body>
 
     <script>
-        const elementos=[1,2,3,4,5]
+        const arEjemplo = [7]
+        const arEjemplo2 = new Array(3)
+        const obVehiculo = {
+            matricula: '74547NMP',
+            modelo: 'Toyota',
+            cilindrada: 1900
+        }
+
+
+
+        const elementos = [1, 11, 3, 4, 5]
+        elementos.push(6)
+        elementos[elementos.length] = 7
+        console.log("elementos", elementos.toString())
+
+
+        function showElemento(elemento, sigElemento) {
+            console.log("El elemento de mi arrays es ", elemento, " el sig", sigElemento)
+        }
+
+        function miMuestraArray(arElemntos, f_Muestra) {
+            for (i = 0; i < arElemntos.length; i++)
+                f_Muestra(arElemntos[i], arElemntos[i + 1])
+        }
+
+        miMuestraArray(elementos, showElemento)
+
+        function ordena(v1, v2) {
+            return v1 - v2
+        }
+
+
+
+        elementos.sort(function (v1, v2) {
+            return v1 - v2
+        }
+        )
+
+        elementos.sort((v1, v2) => v1 - v2)
+        console.log("elementos", elementos)
 
         //let primero=elementos[0]
         //let segundo=elementos[1]
 
-       // let primero,segundo
+        // let primero,segundo
 
-        let [primero,,tercero,...resto]=elementos
+        let [primero, , tercero, ...resto] = elementos
 
-        const articulo={codigo:5,nombre:'Teclado',precio:9.50}
+        const articulo = { codigo: 5, nombre: 'Teclado', precio: 9.50 }
         //let codigo=articulo.codigo
         //let pepe=articulo.nombre
-        const {codigo,precio}=articulo
+        const { codigo, precio } = articulo
 
-        function pvp(art){
-            return art.precio*1.21;
+        function pvp(art) {
+            return art.precio * 1.21;
         }
 
-        function pvp2({precio}){
-            return precio*1.21;
+        function pvp2({ precio }) {
+            return precio * 1.21;
         }
 
-        const pvp3= ({precio}) => precio*1.21
+        const pvp3 = ({ precio }) => precio * 1.21
 
         console.log(elementos)
         console.log(primero)
@@ -40,9 +81,10 @@
         console.log(articulo)
         console.log(codigo)
         console.log(precio)
-        
-        console.log(articulo,pvp3(articulo))
+
+        console.log(articulo, pvp3(articulo))
 
     </script>
-    </body>
+</body>
+
 </html>

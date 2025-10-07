@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        var miCadena = "Jola, Mundo";
-    console.log(miCadena);
 
-    miCadena[0] = "H"; // Error porque las cadenas son inmutables.
+        let miCadena = "Jola, Mundo";
+        console.log(miCadena);
 
-    miCadena = "Hola, Mundo"; // Se debe asignar una cadena nueva.
-    console.log(miCadena);
+        miCadena[0] = "H"; // Error porque las cadenas son inmutables.
+        console.log(miCadena)
+
+        miCadena = "Hola Mundo como estas " // Se debe asignar una cadena nueva.
+        console.log(miCadena);
+
+        //devuelve la cadena reemplazada no modifica el original
+        console.log("Reemplaza Hola,", miCadena.replace("Hola", "Adios"))
+        console.log(miCadena);
+
+        console.log(miCadena.split(" "))
+
+        console.log('Subcadena 2 en adelante:', miCadena.slice(2))
+        console.log('Subcadena 2 hasta la 4:', miCadena.slice(2, 4))
+
+        let nombre = "Garrido Arroyo, Sergio luis"
+
+        let apellido = nombre.slice(0, nombre.indexOf(","))
+        let name = nombre.slice(nombre.indexOf(",") + 1, nombre.lastIndexOf(" "))
+        console.log("apellido", apellido)
+        console.log("nombre", name.trim())
 
 
 
 
-    /*
-Código | Resultado
-------------------  
-\'      Comilla Simple
-\"      Comilla Doble
-\\      Barra invertida
-\n      Línea Nueva
-\r      Retorno de Carro
-\t      Tabulación
-\b      Retroceso
-\f      Salto de Página
-... 
- */
+        /*
+    Código | Resultado
+    ------------------  
+    \'      Comilla Simple
+    \"      Comilla Doble
+    \\      Barra invertida
+    \n      Línea Nueva
+    \r      Retorno de Carro
+    \t      Tabulación
+    \b      Retroceso
+    \f      Salto de Página
+    ... 
+     */
 
-var miMeta;
+        var miMeta;
 
-miMeta = "Aprender \'JavaScript\'";
-console.log(miMeta);
+        miMeta = "Aprender \'JavaScript\'";
+        console.log(miMeta);
 
-miMeta = "Aprender \"JavaScript\"";
-console.log(miMeta);
+        miMeta = "Aprender \"JavaScript\"";
+        console.log(miMeta);
 
-miMeta = "Aprender \\ JavaScript";
-console.log(miMeta);
+        miMeta = "Aprender \\ JavaScript";
+        console.log(miMeta);
 
-miMeta = "Aprender \n JavaScript";
-console.log(miMeta);
+        miMeta = "Aprender \n JavaScript";
+        console.log(miMeta);
     </script>
 </body>
+
 </html>

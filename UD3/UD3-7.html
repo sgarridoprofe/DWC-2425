@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo funciones constructoras y Arrays bidimensionales. Destructuración</title>
+</head>
+
+<body>
+
+
+    <script>
+        let alumno = {
+            nombre: "Juan",
+            edad: 16
+        }
+
+
+        function articulo(codigo, nombre, precio) {
+            this.codigo = codigo,
+                this.nombre = nombre,
+                this.precio = precio
+            this.pvp = function () {
+                return this.precio * 1.21
+            }
+        }
+
+        let art = new articulo(123, "teclado", 10)
+        let art2 = new articulo(124, "raton", 9)
+
+        console.log("alumno", alumno)
+        console.log("articulo", art)
+
+
+        console.log("alumno edad", alumno.edad)
+        console.log("articulo precio", art.precio)
+        console.log("articulo precio venta ", art.pvp())
+
+
+        //arrays
+
+        let arAlumnos = ["juan", "pedro"]
+        let arAlumnos2 = [{ nombre: "juan", edad: 16 }, { nombre: "pedro", edad: 17 }]
+        let arAlumnos3 = [["juna", 16], ["pedro", 17]]
+
+        let arArticulos = [art, art2]
+
+
+        console.log("arAlumnos", arAlumnos)
+        console.log("arAlumnos2", arAlumnos2)
+        console.log("arAlumnos3", arAlumnos3)
+        console.log("arArticulos", arArticulos)
+
+        console.log("arAlumnos3 [0][1]", arAlumnos3[1][1])
+
+
+        /*Destructuración*/
+
+        const arreglo = ['Hola', 'soy', 'sergio']
+
+        const [saludo, , nombre] = arreglo
+        const [hello, ...resto] = arreglo
+
+        console.log("saludo", saludo)
+        console.log("nombre", nombre)
+
+        console.log("hello", hello)
+
+        console.log("resto", resto)
+
+
+        const obVehiculo = { marca: "Renault", modelo: "laguna", potencia: "2200" }
+
+        const { marca, potencia } = obVehiculo
+
+        console.log("marca", marca)
+        console.log("potencia", potencia)
+
+
+        function showMarca({ marca }) {
+
+            console.log("Marca:" + marca)
+
+        }
+
+        function showMarcaModelo({ marca, modelo }) {
+
+            console.log("Marca:" + marca)
+            console.log("Marca:" + modelo)
+
+        }
+
+        showMarca(obVehiculo)
+        showMarcaModelo(obVehiculo)
+
+
+        /*
+        
+                const [saludo, , nombre] = arreglo
+                const [hello, ...resto] = arreglo
+        
+                console.log("saludo", saludo)
+                console.log("nombre", nombre)
+                console.log("resto", resto)
+        
+        
+                const obVehiculo = { marca: "Renault", modelo: "laguna", potencia: "2200" }
+        
+                const { marca, potencia } = obVehiculo
+        
+        
+                function showMarca({ marca }) {
+                    console.log("Marca:" + marca)
+        
+                }
+        
+        
+                console.log("marca", marca)
+                console.log("potencia", potencia)
+        
+                showMarca(obVehiculo)*/
+
+    </script>
+</body>
+
+</html>

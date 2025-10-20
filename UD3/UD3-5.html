@@ -17,10 +17,19 @@
         }
 
         let valor = arNotas.find(aprobado)
+
         let index = arNotas.findIndex(aprobado)
 
         document.write('<br> Mis notas son ', arNotas)
         document.write('<br> La primera nota aprobada es ', valor)
+
+
+
+        let fSuspenso = function (nota) {
+            return nota < 5
+        }
+
+        let indexSuspenso = arNotas.findIndex(nota => nota < 5)
 
 
         document.write('<br> La primera nota aprobada esta en la posicion ', index)

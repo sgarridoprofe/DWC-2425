@@ -17,7 +17,7 @@ const usoExec = () => {
     let array;
 
 while ((array = regex.exec(str)) !== null) {
-    debugger;
+    
   console.log(`Found ${array[0]}. Next starts at ${regex.lastIndex}. valor del array: ${array}`);
   // Expected output: "Found foo. Next starts at 9."
   // Expected output: "Found foo. Next starts at 19."

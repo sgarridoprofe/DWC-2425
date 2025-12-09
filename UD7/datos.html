@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personajes Futurama</title>
+  <link rel="stylesheet" href="./css/personajes.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Futurama API</p>
+      <h1>Personajes</h1>
+      <p class="subtitle">Datos en vivo desde https://futuramaapi.com/api/characters</p>
+    </div>
+    <div class="actions">
+      <a class="ghost" href="./ud7-1.html">Volver al login</a>
+      <button id="reloadBtn" type="button">Recargar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="status" data-status>Esperando datos...</section>
+    <section class="grid" data-characters></section>
+  </main>
+
+  <script type="module" src="./js/personajes.js"></script>
+</body>
+</html>

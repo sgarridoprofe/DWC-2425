@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App.jsx";
 import MyApp from "./MyApp.jsx";
 import Pruebas from "./pages/Pruebas.jsx";
+import RecetaPage from "./pages/RecetaPage.jsx";
+import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <Pruebas />
-  </StrictMode>
+  <BrowserRouter>
+    <StrictMode>
+      <MyApp />
+    </StrictMode>
+  </BrowserRouter>,
 );

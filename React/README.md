@@ -184,17 +184,11 @@ Es importante apreciar que react, requiere que cada elemento de la lista dispong
 
 ## Estilos
 
-
-
 Existen varias formas de aplicar estilos en react
 
-* Estilos en línea
-* Hojas de estilo CSS
-* Módulos CSS
-
-
-
-
+- Estilos en línea
+- Hojas de estilo CSS
+- Módulos CSS
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
@@ -202,10 +196,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Estado
+## Estado - useState
 
 #### Objetos y arrays en el estado
 
-### `npm run build` fails to minify
+#### Estado entre componentes
+
+## Enrutamiento. React Router Dom
+
+React Router Dom
+
+https://reactrouter.com/start/declarative/installation
+
+Rutas
+
+Parametros
+
+* useParams
+* useSearchParams
+
+
+## useEffect
+
+## Custom Hooks
+
+Nos permite crear funciones con lógica de react, es decir crear nuestros propios Hooks.
+
+
+
+
+###`npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

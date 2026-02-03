@@ -1,8 +1,8 @@
 import React from "react";
-import Navegacion from "./Navegacion";
-import useGet from "../hooks/useGet";
+import Navegacion from "../Navegacion";
+import useGet from "../../hooks/useGet";
 
-export default function SelectorCategorias() {
+export default function SelectorCategorias({ setCategoria }) {
   let { data, cargando } = useGet(
     "https://dummyjson.com/products/category-list",
   );
@@ -11,13 +11,17 @@ export default function SelectorCategorias() {
     return <div>Cargando categorias...</div>;
   }
 
-  console.log("categorias:", data);
+  //console.log("categorias:", data);
   return (
     <>
-      <Navegacion />
       <div>SelectorCategorias</div>
       <form>
-        <select>
+        <select
+          name="categorias"
+          onChange={(e) => {
+            setCategoria(e.target.value);
+          }}
+        >
           {data.map((categoria) => (
             <option key={categoria} value={categoria}>
               {categoria}

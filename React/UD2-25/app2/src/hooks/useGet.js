@@ -10,6 +10,9 @@ const useGet = (url) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Datos del efecto useGet", data);
+        if (!Array.isArray(data)) {
+          data = [data];
+        }
         setData([...data]);
         setCargando(false);
       });

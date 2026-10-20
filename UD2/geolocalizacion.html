@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.css"
+      integrity="sha256-P+hWJNlpL+GBSRYC7cdsDbQH91URmpDeOzLp7DbFRtE="
+      crossorigin=""
+    />
+
+    <script type="importmap">
+      {
+        "imports": {
+          "leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js"
+        },
+        "integrity": {
+          "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-alpha.1/dist/leaflet.js": "sha256-gj5JhNAaMi6LCs+jVFOk8sXDe1sWSS2Zlc87m+trLiQ="
+        }
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="map" style="height: 180px"></div>
+    <script type="module">
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      };
+
+      function success(pos) {
+        const crd = pos.coords;
+
+        console.log("Your current position is:");
+        console.log(`Latitude: ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+        console.log(`More or less ${crd.accuracy} meters.`);
+        map.setView([crd.latitude, crd.longitude], 16);
+        //new Marker([crd.latitude, crd.longitude]).addTo(map);
+      }
+
+      function error(err) {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+
+      import {
+        LeafletMap,
+        TileLayer,
+        Marker,
+        Circle,
+        Polygon,
+        Popup,
+      } from "leaflet";
+      const map = new LeafletMap("map").setView([51.505, -0.09], 13);
+
+      new TileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "&copy; OpenStreetMap",
+      }).addTo(map);
+    </script>
+  </body>
+</html>

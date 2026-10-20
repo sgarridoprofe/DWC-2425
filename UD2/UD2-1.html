@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejemplos de Date</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
+      let d = new Date();
 
+      let d2 = new Date();
 
-        let d = new Date()
+      let year = Date.getFullYear;
+      debugger;
+      let dia = d.getDate();
 
-        let d2 = new Date()
+      let diasemana = d.getDay();
 
-
-
-        document.write(" " + d.toDateString() + "<br>")
-        document.write(" Año :" + d.getFullYear())
+      document.write(" " + d.toDateString() + "<br>");
+      document.write(" Año :" + d.getFullYear());
     </script>
-</body>
-
+  </body>
 </html>

@@ -1,45 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        let arrNotas = [3, 4, 7]
-        let arrValoresDistintos = [3, "hola", 4, 7]
+      let arrNotas = [3, 4, 7];
+      let arrValoresDistintos = [3, "hola", 4, 7];
 
-        const arrObjeto = new Array(3, 4, 7)
-        const arraPesos = new Array(10)
-
-        console.log("Longitud:" + arraPesos.length)
-        arraPesos.fill(0)
-        let i = 0
-
-        //arrValoresDistintos[6]="FIN"
-        //arrValoresDistintos.push("FIN")
-        arrValoresDistintos[arrValoresDistintos.length] = "FIN"
-
-        for (i = 0; i < arrValoresDistintos.length; i++)
-            console.log("arrValoresDistintos [" + i + "]" + arrValoresDistintos[i])
-
-         //indexación por nombre en el array
-         const arraIndNombre=[]
-         arraIndNombre["1T"]=5
-         arraIndNombre["2T"]=7
-         arraIndNombre["3T"]=8
- 
-         console.log("arraIndNombre:", arraIndNombre)
-         console.log("arraIndNombre['1T']:", arraIndNombre["1T"])
-         console.log("arraIndNombre[0]:", arraIndNombre[0])
- 
-        
+      const arrObjeto = new Array(3, 4, 7);
+      const arraPesos = new Array(10);
       
+      console.log("Longitud:" + arraPesos.length);
+      arraPesos.fill(0);
+      let i = 0;
 
+      //arrValoresDistintos[6]="FIN"
+      //arrValoresDistintos.push("FIN")
+      arrValoresDistintos[arrValoresDistintos.length] = "FIN";
+
+      for (i = 0; i < arrValoresDistintos.length; i++)
+        console.log("arrValoresDistintos [" + i + "]" + arrValoresDistintos[i]);
+
+      //indexación por nombre en el array
+      const arraIndNombre = [];
+      arraIndNombre["1T"] = 5;
+      arraIndNombre["2T"] = 7;
+      arraIndNombre["3T"] = 8;
+
+      console.log("arraIndNombre:", arraIndNombre);
+      console.log("arraIndNombre['1T']:", arraIndNombre["1T"]);
+      console.log("arraIndNombre[0]:", arraIndNombre[0]);
     </script>
-</body>
-
+  </body>
 </html>

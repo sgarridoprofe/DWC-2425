@@ -1,58 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Gramática y tipos</title>
-  <script>
-    // declaración de variables
-    //document.write("hola...");
-    // Declaración de variables
-    var nombre = "Juan"
-    let paisDeResidencia = "España";
-
-
-    let pais = "Italia"
-    console.log(pais);
-
-
-    const edad = 30;
-  </script>
-</head>
-
-<body>
-  <header>
-    <h1>Titular principal de la página</h1>
-  </header>
-  <main>
-    <h2>Primer Subtítulo de la página</h2>
-    <p>Primer párrafo</p>
-
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Gramática y tipos</title>
     <script>
-      debugger
-      // ubicar etiquetas script con src para módulos
-      console.log('nombre', nombre)
-      console.log('pais', pais)
+      // declaración de variables
+      //document.write("hola...");
+      // Declaración de variables
+
+      var nombre = "Juan";
+      let paisDeResidencia = "España";
+
+      let pais = "Italia";
+      console.log(pais);
+
+      const edad = 30;
       document.write("hola...");
-
-
-      function miFuncion() {
-        console.log("esta es una funcion")
-      }
-
-      miFuncion();
-      let fMensaje = miFuncion;
-
-      let mSalida = "hola mundo";
-      mSalida = 5 + "6";
-      mSalida = mSalida + 4;
-      mSalida += 4;
-      console.log(mSalida);
-
-      <!-- hola.. -->
     </script>
-  </main>
-  <footer></footer>
-</body>
+  </head>
 
+  <body>
+    <header>
+      <h1>Titular principal de la página</h1>
+    </header>
+    <main>
+      <h2>Primer Subtítulo de la página</h2>
+      <p>Primer párrafo</p>
+
+      <script>
+        let color = "rojo";
+        document.write("Mi color..." + color);
+
+        //debugger;
+        // ubicar etiquetas script con src para módulos
+        console.log("nombre", nombre);
+        console.log("pais", pais);
+        document.write("hola...");
+
+        function miFuncion() {
+          console.log("esta es una funcion");
+        }
+
+        miFuncion();
+        let fMensaje = miFuncion;
+
+        let mSalida = "hola mundo";
+        mSalida = 5 + parseInt("6");
+
+        mEdad = true;
+
+        if (mEdad) {
+          console.log("edad", edad);
+        } else {
+          console.log("no es mayor de edad");
+        }
+        //debugger;
+        mSalida = mSalida + 4;
+        mSalida += 4;
+        console.log("msalida:", mSalida);
+
+        <!-- hola.. -->
+      </script>
+    </main>
+    <footer></footer>
+  </body>
 </html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numeros = [10, 20, 30, 40, 50];
+      for (let i = 0; i < numeros.length; i++) {
+        console.log(`Posición ${i}: ${numeros[i]}`);
+      }
+
+      for (const numero of numeros) {
+        console.log(numero);
+      }
+
+      //se permite for in pero no es recomendable
+      for (const indice in numeros) {
+        console.log(numeros[indice]);
+      }
+
+      for (const [indice, numero] of numeros.entries()) {
+        console.log(indice, numero);
+      }
+
+      //foreach
+      numeros.forEach((numero, indice) => {
+        console.log(`Posición ${indice}: ${numero}`);
+      });
+
+      numeros.forEach((valor) => {
+        console.log(`Posición : ${valor}`);
+      });
+
+      function muestraValor(v, pos, ar) {
+        console.log(v);
+        console.log(pos);
+        console.log(ar);
+      }
+
+      numeros.forEach(muestraValor);
+
+      //añadir y eliminar
+      let frutas = ["Manzana", "Pera"];
+      frutas.push("Kiwi");
+      console.log(frutas); // ["Manzana", "Pera", "Kiwi"]
+
+      let eliminado = frutas.pop();
+      console.log(eliminado);
+
+      //busqueda simple
+      frutas = ["Manzana", "Pera", "Kiwi", "Naranja"];
+
+      // includes(): ¿Existe un elemento?
+      console.log(frutas.includes("Kiwi")); // true
+
+      // indexOf(): ¿En qué posición se encuentra?
+      console.log(frutas.indexOf("Pera")); // 1
+
+      // Si no existe, devuelve -1
+      console.log(frutas.indexOf("Melón")); // -1
+
+      numeros = [10, 20, 30, 40, 50];
+
+      // Extraer elementos de las posiciones 1 a 3 (3 excluida)
+      console.log(numeros.slice(1, 3)); // [20, 30]
+      numeros = numeros.slice(1, 3);
+
+      // Concatenar arrays
+      console.log([1, 2].concat([3, 4])); // [1, 2, 3, 4]
+
+      // Convertir a cadena
+      console.log(["Ana", "Luis", "Eva"].join(" - "));
+      // Ana - Luis - Eva
+
+      // Acceder desde el final
+      console.log(numeros.at(-1)); // 50
+
+      // Invertir sin modificar el original
+      console.log(numeros.toReversed());
+      // [50, 40, 30, 20, 10]
+
+      //funciones de arrays callback
+      numeros = [10, 20, 30];
+      numeros.reverse();
+      console.log(numeros); // [30, 20, 10]
+
+      numeros = [8, 100, 3, 25];
+      numeros.sort((a, b) => a - b);
+      console.log(numeros); // [3, 8, 25, 100]
+
+      numeros.sort((a, b) => b - a);
+      console.log(numeros); // [100, 25, 8, 3]
+
+      // find(): Devuelve el primer elemento que cumple la condición
+      numeros = [5, 12, 8, 30];
+
+      console.log(numeros.find((n) => n > 10)); // 12
+
+      // findIndex(): Devuelve el índice del primero que cumple
+      console.log(numeros.findIndex((n) => n > 10)); // 1
+
+      //transformación y filtro
+      numeros = [1, 2, 3, 4];
+
+      const dobles = numeros.map((numero) => numero * 2);
+
+      console.log(dobles); // [2, 4, 6, 8]
+
+      numeros = [5, 12, 8, 20, 3];
+
+      const mayores = numeros.filter((numero) => numero > 10);
+
+      console.log(mayores); // [12, 20]
+
+      //comprobar condiciones
+      notas = [6, 8, 4, 9];
+
+      // ¿Algún alumno ha suspendido?
+      console.log(notas.some((nota) => nota < 5)); // true
+
+      // ¿Todos los alumnos han aprobado?
+      console.log(notas.every((nota) => nota >= 5)); // false
+
+      //ejemplo uso sort
+      let arDatos = [4, 3, 1, 8, 6];
+
+      function ordena(a, b) {
+        if (a > b) return 1;
+        if (a < b) return -1;
+        return 0;
+      }
+
+      const ordena2 = (a, b) => b - a;
+
+      arDatos.sort((a, b) => b - a);
+
+      console.log("arDatos", arDatos);
+
+      let obAlumno = { codigo: 5, nombre: "Antonio Gomez", edad: 15 };
+
+      let arAlumnos = [
+        { codigo: 3, nombre: "Juan Gomez", edad: 16 },
+        { codigo: 1, nombre: "Pedro Gomez", edad: 18 },
+        obAlumno,
+      ];
+
+      console.log("arAlumnos", arAlumnos);
+
+      for (objItem of arAlumnos) {
+        console.log("objItem", objItem.nombre);
+      }
+
+      arAlumnos.fi
+      let obAlumnoEncontrado = arAlumnos.find((obItem) => obItem.codigo == 5);
+
+      console.log(obAlumnoEncontrado);
+    </script>
+  </body>
+</html>

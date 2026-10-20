@@ -1,23 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <button id="stop">Stop</button>
+    <div id="reloj"></div>
+    <button></button>
     <script>
+      let iteracion = 0;
+      let idInterval = 0;
 
-        function saludo() {
-            document.write("Hola..." + "</br>")
-        }
+      function saludo() {
+        //document.write("Hola..." + "</br>");
+        const d = new Date();
+        /* document.write(
+          "</br> Iteracion: " + iteracion + "------" + d.toDateString(),
+        );*/
+        document.getElementById("reloj").textContent =
+          iteracion + "------" + d.toDateString();
+        iteracion++;
+      }
 
-        setInterval(saludo, 1000);
+      function paraSaludo() {
+        clearInterval(idInterval);
+      }
 
-
+      idInterval = setInterval(saludo, 1000);
+      document.getElementById("stop").addEventListener("click", paraSaludo);
     </script>
-</body>
-
+  </body>
 </html>

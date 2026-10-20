@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //destructuración de array
+      const arFrutas = ["melon", "manzana", "pera", "sandia"];
+
+      //   let v1 = arFrutas[0];
+      //   let v2 = arFrutas[1];
+
+      let [v1, v2] = arFrutas;
+
+      console.log("arFrutas", arFrutas);
+      console.log("v1:" + v1, "v2:" + v2);
+
+      //usamos spread operator
+      let [fruta1, ...resto] = arFrutas;
+      console.log("fruta1:" + fruta1, "resto:" + resto);
+
+      //nos permite copiar array
+
+      //de esta forma no copiamos array, son dos referencias al mismo objeto
+      let arFrutas2 = arFrutas;
+      arFrutas2[0] = "Caballo";
+
+      console.log("arFrutas2", arFrutas2);
+      console.log("arFrutas", arFrutas);
+      arFrutas2[0] = "melon";
+
+      arFrutas2 = [...arFrutas];
+      arFrutas2[0] = "nispora";
+      console.log("arFrutas2 copiada con spread operator", arFrutas2);
+      console.log("arFrutas", arFrutas);
+
+      //nos permite añadir un elemento, unir dos arrays
+      arFrutas2 = [...arFrutas2, "platano"];
+
+      //destructuración de objetos
+
+      const obVehiculo = {
+        marca: "Renault",
+        modelo: "laguna",
+        potencia: "2200",
+      };
+
+      const { marca, potencia } = obVehiculo;
+      console.log("marca:" + marca, "potencia:" + potencia);
+
+      function showMarca({ marca }) {
+        console.log("Marca:" + marca);
+        return marca;
+      }
+
+      console.log("showMarca:" + showMarca(obVehiculo));
+
+      //nos permite copiar un objeto
+      const copiaVehiculo = { ...obVehiculo };
+      copiaVehiculo.marca = "Toyota";
+      console.log("copiaVehiculo", copiaVehiculo);
+
+      //       Operación	Sintaxis
+      // Copiar un array	const copia = [...array];
+      // Copiar un objeto	const copia = {...objeto};
+      // Unir arrays	    const unido = [...a, ...b];
+      // Extraer valores de array	const [a, b] = array;
+      // Extraer propiedades	    const {nombre, edad} = objeto;
+      // Extraer resto de array	    const [a, ...resto] = array;
+      // Extraer resto de objeto	const {a, ...resto} = objeto;
+    </script>
+  </body>
+</html>
